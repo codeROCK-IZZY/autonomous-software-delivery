@@ -1,0 +1,649 @@
+{
+  "deploys_per_bank": 200,
+  "settings": {
+    "family_alpha": 0.01,
+    "looks": 18,
+    "min_error_ratio": 1.25,
+    "min_latency_ratio": 1.1,
+    "min_tail_share": 0.02,
+    "min_canary_samples": 15
+  },
+  "banks": {
+    "dev": {
+      "big_bang": {
+        "bad": 100,
+        "good": 100,
+        "caught": 69,
+        "caught_share": 0.69,
+        "caught_by_5pct": 0,
+        "caught_by_5pct_share": 0.0,
+        "bad_shipped": 31,
+        "harm": 330776,
+        "harm_per_bad": 3307.8,
+        "false_rollbacks": 10,
+        "false_rollback_share": 0.1,
+        "minutes_to_full": 0.0,
+        "by_kind": {
+          "endpoint_latency": {
+            "deploys": 18,
+            "caught": 4,
+            "harm": 233530
+          },
+          "errors": {
+            "deploys": 23,
+            "caught": 19,
+            "harm": 19310
+          },
+          "leak": {
+            "deploys": 25,
+            "caught": 25,
+            "harm": 19591
+          },
+          "region_errors": {
+            "deploys": 15,
+            "caught": 8,
+            "harm": 16353
+          },
+          "tail_latency": {
+            "deploys": 19,
+            "caught": 13,
+            "harm": 41991
+          }
+        },
+        "examples": [
+          {
+            "regression": "none x1.0",
+            "reason": "service alert: service error rate 0.99% vs 0.34% before the deploy"
+          },
+          {
+            "regression": "none x1.0",
+            "reason": "service alert: service error rate 1.10% vs 0.34% before the deploy"
+          },
+          {
+            "regression": "none x1.0",
+            "reason": "service alert: service error rate 0.81% vs 0.35% before the deploy"
+          },
+          {
+            "regression": "none x1.0",
+            "reason": "service alert: service error rate 0.92% vs 0.39% before the deploy"
+          },
+          {
+            "regression": "none x1.0",
+            "reason": "service alert: service error rate 0.70% vs 0.29% before the deploy"
+          }
+        ]
+      },
+      "threshold_canary": {
+        "bad": 100,
+        "good": 100,
+        "caught": 80,
+        "caught_share": 0.8,
+        "caught_by_5pct": 66,
+        "caught_by_5pct_share": 0.66,
+        "bad_shipped": 20,
+        "harm": 108906,
+        "harm_per_bad": 1089.1,
+        "false_rollbacks": 21,
+        "false_rollback_share": 0.21,
+        "minutes_to_full": 60.0,
+        "by_kind": {
+          "endpoint_latency": {
+            "deploys": 18,
+            "caught": 8,
+            "harm": 91001
+          },
+          "errors": {
+            "deploys": 23,
+            "caught": 20,
+            "harm": 3444
+          },
+          "leak": {
+            "deploys": 25,
+            "caught": 25,
+            "harm": 1818
+          },
+          "region_errors": {
+            "deploys": 15,
+            "caught": 11,
+            "harm": 3621
+          },
+          "tail_latency": {
+            "deploys": 19,
+            "caught": 16,
+            "harm": 9022
+          }
+        },
+        "examples": [
+          {
+            "regression": "none x1.0",
+            "reason": "service alert: service error rate 1.06% vs 0.34% before the deploy"
+          },
+          {
+            "regression": "none x1.0",
+            "reason": "threshold canary: canary p99 480 ms vs 362 ms before the deploy"
+          },
+          {
+            "regression": "none x1.0",
+            "reason": "threshold canary: canary error rate 0.74% vs 0.41% before the deploy"
+          },
+          {
+            "regression": "none x1.0",
+            "reason": "threshold canary: canary error rate 0.63% vs 0.33% before the deploy"
+          },
+          {
+            "regression": "none x1.0",
+            "reason": "threshold canary: canary error rate 0.92% vs 0.34% before the deploy"
+          }
+        ]
+      },
+      "progressive": {
+        "bad": 100,
+        "good": 100,
+        "caught": 99,
+        "caught_share": 0.99,
+        "caught_by_5pct": 53,
+        "caught_by_5pct_share": 0.53,
+        "bad_shipped": 1,
+        "harm": 9876,
+        "harm_per_bad": 98.8,
+        "false_rollbacks": 0,
+        "false_rollback_share": 0.0,
+        "minutes_to_full": 90.0,
+        "by_kind": {
+          "endpoint_latency": {
+            "deploys": 18,
+            "caught": 18,
+            "harm": 638
+          },
+          "errors": {
+            "deploys": 23,
+            "caught": 23,
+            "harm": 1149
+          },
+          "leak": {
+            "deploys": 25,
+            "caught": 25,
+            "harm": 1664
+          },
+          "region_errors": {
+            "deploys": 15,
+            "caught": 15,
+            "harm": 517
+          },
+          "tail_latency": {
+            "deploys": 19,
+            "caught": 18,
+            "harm": 5908
+          }
+        },
+        "examples": []
+      }
+    },
+    "heldout": {
+      "big_bang": {
+        "bad": 104,
+        "good": 96,
+        "caught": 72,
+        "caught_share": 0.6923,
+        "caught_by_5pct": 0,
+        "caught_by_5pct_share": 0.0,
+        "bad_shipped": 32,
+        "harm": 262110,
+        "harm_per_bad": 2520.3,
+        "false_rollbacks": 6,
+        "false_rollback_share": 0.0625,
+        "minutes_to_full": 0.0,
+        "by_kind": {
+          "endpoint_latency": {
+            "deploys": 13,
+            "caught": 4,
+            "harm": 118717
+          },
+          "errors": {
+            "deploys": 25,
+            "caught": 21,
+            "harm": 27110
+          },
+          "leak": {
+            "deploys": 13,
+            "caught": 13,
+            "harm": 10087
+          },
+          "region_errors": {
+            "deploys": 23,
+            "caught": 14,
+            "harm": 27698
+          },
+          "tail_latency": {
+            "deploys": 30,
+            "caught": 20,
+            "harm": 78499
+          }
+        },
+        "examples": [
+          {
+            "regression": "none x1.0",
+            "reason": "service alert: service error rate 0.92% vs 0.31% before the deploy"
+          },
+          {
+            "regression": "none x1.0",
+            "reason": "service alert: service error rate 1.09% vs 0.35% before the deploy"
+          },
+          {
+            "regression": "none x1.0",
+            "reason": "service alert: service error rate 1.10% vs 0.33% before the deploy"
+          },
+          {
+            "regression": "none x1.0",
+            "reason": "service alert: service error rate 0.75% vs 0.35% before the deploy"
+          },
+          {
+            "regression": "none x1.0",
+            "reason": "service alert: service p99 543 ms vs 345 ms before the deploy"
+          }
+        ]
+      },
+      "threshold_canary": {
+        "bad": 104,
+        "good": 96,
+        "caught": 89,
+        "caught_share": 0.8558,
+        "caught_by_5pct": 82,
+        "caught_by_5pct_share": 0.7885,
+        "bad_shipped": 15,
+        "harm": 60178,
+        "harm_per_bad": 578.6,
+        "false_rollbacks": 21,
+        "false_rollback_share": 0.2188,
+        "minutes_to_full": 60.0,
+        "by_kind": {
+          "endpoint_latency": {
+            "deploys": 13,
+            "caught": 7,
+            "harm": 43584
+          },
+          "errors": {
+            "deploys": 25,
+            "caught": 25,
+            "harm": 641
+          },
+          "leak": {
+            "deploys": 13,
+            "caught": 13,
+            "harm": 225
+          },
+          "region_errors": {
+            "deploys": 23,
+            "caught": 17,
+            "harm": 7592
+          },
+          "tail_latency": {
+            "deploys": 30,
+            "caught": 27,
+            "harm": 8136
+          }
+        },
+        "examples": [
+          {
+            "regression": "none x1.0",
+            "reason": "threshold canary: canary error rate 0.83% vs 0.31% before the deploy"
+          },
+          {
+            "regression": "none x1.0",
+            "reason": "threshold canary: canary error rate 0.95% vs 0.35% before the deploy"
+          },
+          {
+            "regression": "none x1.0",
+            "reason": "threshold canary: canary p99 493 ms vs 374 ms before the deploy"
+          },
+          {
+            "regression": "none x1.0",
+            "reason": "threshold canary: canary error rate 0.79% vs 0.33% before the deploy"
+          },
+          {
+            "regression": "none x1.0",
+            "reason": "threshold canary: canary error rate 0.86% vs 0.44% before the deploy"
+          }
+        ]
+      },
+      "progressive": {
+        "bad": 104,
+        "good": 96,
+        "caught": 102,
+        "caught_share": 0.9808,
+        "caught_by_5pct": 60,
+        "caught_by_5pct_share": 0.5769,
+        "bad_shipped": 2,
+        "harm": 12834,
+        "harm_per_bad": 123.4,
+        "false_rollbacks": 1,
+        "false_rollback_share": 0.0104,
+        "minutes_to_full": 90.0,
+        "by_kind": {
+          "endpoint_latency": {
+            "deploys": 13,
+            "caught": 13,
+            "harm": 380
+          },
+          "errors": {
+            "deploys": 25,
+            "caught": 25,
+            "harm": 1332
+          },
+          "leak": {
+            "deploys": 13,
+            "caught": 13,
+            "harm": 472
+          },
+          "region_errors": {
+            "deploys": 23,
+            "caught": 23,
+            "harm": 691
+          },
+          "tail_latency": {
+            "deploys": 30,
+            "caught": 28,
+            "harm": 9960
+          }
+        },
+        "examples": [
+          {
+            "regression": "none x1.0",
+            "reason": "canary analysis: eu-west/search: error rate 0.42% on the new version vs 0.06% (p=1.8e-06)"
+          }
+        ]
+      }
+    },
+    "fresh": {
+      "big_bang": {
+        "bad": 88,
+        "good": 112,
+        "caught": 55,
+        "caught_share": 0.625,
+        "caught_by_5pct": 0,
+        "caught_by_5pct_share": 0.0,
+        "bad_shipped": 33,
+        "harm": 82515,
+        "harm_per_bad": 937.7,
+        "false_rollbacks": 16,
+        "false_rollback_share": 0.1429,
+        "minutes_to_full": 0.0,
+        "by_kind": {
+          "bursty_errors": {
+            "deploys": 44,
+            "caught": 40,
+            "harm": 44411
+          },
+          "cell_errors": {
+            "deploys": 44,
+            "caught": 15,
+            "harm": 38104
+          }
+        },
+        "examples": [
+          {
+            "regression": "none x1.0",
+            "reason": "service alert: service error rate 0.69% vs 0.30% before the deploy"
+          },
+          {
+            "regression": "none x1.0",
+            "reason": "service alert: service error rate 0.97% vs 0.33% before the deploy"
+          },
+          {
+            "regression": "none x1.0",
+            "reason": "service alert: service error rate 1.25% vs 0.36% before the deploy"
+          },
+          {
+            "regression": "none x1.0",
+            "reason": "service alert: service error rate 1.11% vs 0.35% before the deploy"
+          },
+          {
+            "regression": "none x1.0",
+            "reason": "service alert: service error rate 0.89% vs 0.28% before the deploy"
+          }
+        ]
+      },
+      "threshold_canary": {
+        "bad": 88,
+        "good": 112,
+        "caught": 65,
+        "caught_share": 0.7386,
+        "caught_by_5pct": 59,
+        "caught_by_5pct_share": 0.6705,
+        "bad_shipped": 23,
+        "harm": 14193,
+        "harm_per_bad": 161.3,
+        "false_rollbacks": 31,
+        "false_rollback_share": 0.2768,
+        "minutes_to_full": 60.0,
+        "by_kind": {
+          "bursty_errors": {
+            "deploys": 44,
+            "caught": 44,
+            "harm": 497
+          },
+          "cell_errors": {
+            "deploys": 44,
+            "caught": 21,
+            "harm": 13696
+          }
+        },
+        "examples": [
+          {
+            "regression": "none x1.0",
+            "reason": "threshold canary: canary error rate 0.56% vs 0.30% before the deploy"
+          },
+          {
+            "regression": "none x1.0",
+            "reason": "threshold canary: canary p99 766 ms vs 395 ms before the deploy"
+          },
+          {
+            "regression": "none x1.0",
+            "reason": "threshold canary: canary error rate 0.59% vs 0.30% before the deploy"
+          },
+          {
+            "regression": "none x1.0",
+            "reason": "threshold canary: canary error rate 0.73% vs 0.33% before the deploy"
+          },
+          {
+            "regression": "none x1.0",
+            "reason": "threshold canary: canary error rate 0.70% vs 0.31% before the deploy"
+          }
+        ]
+      },
+      "progressive": {
+        "bad": 88,
+        "good": 112,
+        "caught": 86,
+        "caught_share": 0.9773,
+        "caught_by_5pct": 45,
+        "caught_by_5pct_share": 0.5114,
+        "bad_shipped": 2,
+        "harm": 3355,
+        "harm_per_bad": 38.1,
+        "false_rollbacks": 0,
+        "false_rollback_share": 0.0,
+        "minutes_to_full": 90.0,
+        "by_kind": {
+          "bursty_errors": {
+            "deploys": 44,
+            "caught": 44,
+            "harm": 2027
+          },
+          "cell_errors": {
+            "deploys": 44,
+            "caught": 42,
+            "harm": 1328
+          }
+        },
+        "examples": []
+      }
+    }
+  },
+  "selection": {
+    "repos": 3,
+    "changes": 6000,
+    "bugs": 1805,
+    "catchable_by_full_run": 1659,
+    "hidden_dependencies": 25,
+    "run_all": {
+      "tests_run_share": 1.0,
+      "bugs_caught": 1659,
+      "bugs_caught_share": 1.0,
+      "waiting_for_nightly": 0,
+      "false_red_share": 0.199,
+      "false_red_no_retry_share": 0.3753
+    },
+    "same_directory": {
+      "tests_run_share": 0.0802,
+      "bugs_caught": 1178,
+      "bugs_caught_share": 0.7101,
+      "waiting_for_nightly": 481,
+      "false_red_share": 0.018,
+      "false_red_no_retry_share": 0.0412
+    },
+    "impact": {
+      "tests_run_share": 0.3755,
+      "bugs_caught": 1656,
+      "bugs_caught_share": 0.9982,
+      "waiting_for_nightly": 3,
+      "false_red_share": 0.0727,
+      "false_red_no_retry_share": 0.1408
+    },
+    "per_repo": [
+      {
+        "modules": 150,
+        "tests": 816,
+        "changes": 2000,
+        "bugs": 599,
+        "catchable_by_full_run": 545,
+        "hidden_dependencies": 7,
+        "flaky_tests": 12,
+        "flaky_known": 7,
+        "run_all": {
+          "tests_run_share": 1.0,
+          "bugs_caught": 545,
+          "bugs_caught_share": 1.0,
+          "waiting_for_nightly": 0,
+          "false_red": 327,
+          "false_red_share": 0.1635,
+          "false_red_no_retry_share": 0.339
+        },
+        "same_directory": {
+          "tests_run_share": 0.0822,
+          "bugs_caught": 387,
+          "bugs_caught_share": 0.7101,
+          "waiting_for_nightly": 158,
+          "false_red": 21,
+          "false_red_share": 0.0105,
+          "false_red_no_retry_share": 0.036
+        },
+        "impact": {
+          "tests_run_share": 0.3807,
+          "bugs_caught": 543,
+          "bugs_caught_share": 0.9963,
+          "waiting_for_nightly": 2,
+          "false_red": 124,
+          "false_red_share": 0.062,
+          "false_red_no_retry_share": 0.1265
+        }
+      },
+      {
+        "modules": 150,
+        "tests": 849,
+        "changes": 2000,
+        "bugs": 598,
+        "catchable_by_full_run": 547,
+        "hidden_dependencies": 10,
+        "flaky_tests": 17,
+        "flaky_known": 10,
+        "run_all": {
+          "tests_run_share": 1.0,
+          "bugs_caught": 547,
+          "bugs_caught_share": 1.0,
+          "waiting_for_nightly": 0,
+          "false_red": 464,
+          "false_red_share": 0.232,
+          "false_red_no_retry_share": 0.414
+        },
+        "same_directory": {
+          "tests_run_share": 0.078,
+          "bugs_caught": 388,
+          "bugs_caught_share": 0.7093,
+          "waiting_for_nightly": 159,
+          "false_red": 44,
+          "false_red_share": 0.022,
+          "false_red_no_retry_share": 0.044
+        },
+        "impact": {
+          "tests_run_share": 0.3756,
+          "bugs_caught": 546,
+          "bugs_caught_share": 0.9982,
+          "waiting_for_nightly": 1,
+          "false_red": 163,
+          "false_red_share": 0.0815,
+          "false_red_no_retry_share": 0.156
+        }
+      },
+      {
+        "modules": 150,
+        "tests": 816,
+        "changes": 2000,
+        "bugs": 608,
+        "catchable_by_full_run": 567,
+        "hidden_dependencies": 8,
+        "flaky_tests": 14,
+        "flaky_known": 8,
+        "run_all": {
+          "tests_run_share": 1.0,
+          "bugs_caught": 567,
+          "bugs_caught_share": 1.0,
+          "waiting_for_nightly": 0,
+          "false_red": 403,
+          "false_red_share": 0.2015,
+          "false_red_no_retry_share": 0.373
+        },
+        "same_directory": {
+          "tests_run_share": 0.0805,
+          "bugs_caught": 403,
+          "bugs_caught_share": 0.7108,
+          "waiting_for_nightly": 164,
+          "false_red": 43,
+          "false_red_share": 0.0215,
+          "false_red_no_retry_share": 0.0435
+        },
+        "impact": {
+          "tests_run_share": 0.3703,
+          "bugs_caught": 567,
+          "bugs_caught_share": 1.0,
+          "waiting_for_nightly": 0,
+          "false_red": 149,
+          "false_red_share": 0.0745,
+          "false_red_no_retry_share": 0.14
+        }
+      }
+    ]
+  },
+  "checks": {
+    "heldout_caught_share_min": 0.9808,
+    "fresh_caught_share_min": 0.9773,
+    "false_rollback_share_max": 0.0048,
+    "harm_vs_big_bang_max": 0.049,
+    "impact_bugs_caught_share_min": 0.9982
+  },
+  "gate": {
+    "heldout_caught_share_min": 0.95,
+    "fresh_caught_share_min": 0.93,
+    "false_rollback_share_max": 0.02,
+    "harm_vs_big_bang_max": 0.1,
+    "impact_bugs_caught_share_min": 0.99
+  },
+  "passed": {
+    "heldout_caught_share_min": true,
+    "fresh_caught_share_min": true,
+    "false_rollback_share_max": true,
+    "harm_vs_big_bang_max": true,
+    "impact_bugs_caught_share_min": true
+  },
+  "ok": true
+}
